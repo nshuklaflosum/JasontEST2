@@ -3,18 +3,19 @@ import { LightningElement, track, api } from 'lwc';
 
 
 export default class Detail extends LightningElement {
-    
-    greeting = 'World';
-    
+
     // Ensure changes are reactive when product is updated
     @track product;
+    
+    totalAmount = 0;
+    totalNumber = 0;
 
     // Private var to track @api productId
     _productId = undefined;
     
-    // parent account ID
-    _parentAccId = undefined;
-    
+    // account ID
+    _accId = undefined;
+
     // Use set and get to process the value every time it's
     // requested while switching between products
     set productId(value) {
@@ -27,7 +28,11 @@ export default class Detail extends LightningElement {
         return this._productId;
     }
     
-    changeHandler(event) {
-        this.greeting = event.target.value;
+    calculateAmount(event) {
+        this.totalAmount = event.target.value;
+    }
+    
+    fillNumber(event) {
+        this.totalNumber = event.target.value;
     }
 }

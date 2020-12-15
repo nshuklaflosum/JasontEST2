@@ -2,16 +2,12 @@ public with sharing class ProfileTabUserController {
     // Purpose: Custom Chatter profile page
 
     private ApexPages.StandardController c;
-    // this is new code 
-    
     // Getter methods you can call from your Visualforce page, e.g. {! viewingMyProfile }
     // Added new methods. George Adams. 4th March
-    public User Admin6 { get; set; }
-    public User getterUser { get; set; }
-    public User Developer1 { get; set; }
+
     public User subjectUser { get; set; }
     public boolean viewingMyProfile { get; set; } // Whether or not Iâm viewing my profile
-    public String viewerID { get; set; } 
+    public String viewerID { get; set; } // UID string for the viewing user
     public String subjectID { get; set; } // UID string for the subject user (being viewed)
     // Constructor method for the controller
     public ProfileTabUserController(ApexPages.StandardController stdController) {
@@ -34,19 +30,11 @@ public with sharing class ProfileTabUserController {
 
     private String getTargetSFDCUID() {
         return ApexPages.currentPage().getParameters().get('sfdc.userId');
-        //added another test comment
     }
 
     // Overrides StandardController save method to force reload of current page afterwards
     public PageReference save() {
         c.save();
-        return ApexPages.currentPage();
-    }
-    
-    ///// Created by another developer
-    // Overrides StandardController cancel method to force page reload
-    public PageReference cancel() {
-        c.cancel();
         return ApexPages.currentPage();
     }
 

@@ -157,9 +157,9 @@
         <fullName>ApprovalDate__c</fullName>
         <externalId>false</externalId>
         <label>ApprovalDate</label>
-        <required>true</required>
+        <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Date</type>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>ExpenseAmount__c</fullName>
@@ -170,6 +170,14 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OverrideAllowed__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>OverrideAllowed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <label>Zumba</label>
     <nameField>
